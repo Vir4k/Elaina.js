@@ -24,8 +24,8 @@ module.exports = class extends Event {
 
             return message.reply({
                 content: [
-                    `Hi, my prefix for this guild is \`${customPrefix}\`.`,
-                    `Use \`${customPrefix}help\` to get a list of commands!`
+                    `Hi, my prefix for this guild is \`${prefix}\`.`,
+                    `Use \`${prefix}help\` to get a list of commands!`
                 ].join('\n'),
                 components: [row]
             });
