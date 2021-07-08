@@ -7,26 +7,26 @@ const Event = require("../../Structures/Event");
 
 module.exports = class extends Event {
     async run(message) {
-        const mentionRegex = RegExp(`^<@!?${this.client.id}>$`);
-        const mentionRegexPrefix = RegExp(`^<@!?${this.client.id}> `);
+        const mentionRegex = RegExp(`^<@!?${this.client.user.id}>$`);
+        const mentionRegexPrefix = RegExp(`^<@!?${this.client.user.id}> `);
 
         if (!message.guild || message.author.bot) return;
         if (message.content.match(mentionRegex)) {
             const row = new MessageActionRow()
                 .addComponents(new MessageButton()
-                    .setStyle('LINK')
-                    .setLabel('Vote me!')
+                    .setStyle("LINK")
+                    .setLabel("Vote me!")
                     .setURL(`https://top.gg/bot/${this.client.user.id}`))
                 .addComponents(new MessageButton()
-                    .setStyle('LINK')
-                    .setLabel('Invite me!')
+                    .setStyle"LINK")
+                    .setLabel("Invite me!")
                     .setURL(`https://discord.com/api/oauth2/authorize?client_id=${this.client.user.id}&permissions=2013654135&scope=bot%20applications.commands`));
 
             return message.reply({
                 content: [
                     `Hi, my prefix for this guild is \`${prefix}\`.`,
                     `Use \`${prefix}help\` to get a list of commands!`
-                ].join('\n'),
+                ].join("\n"),
                 components: [row]
             });
         }
