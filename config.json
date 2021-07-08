@@ -1,5 +1,5 @@
 {
-    "prefix": "$", // you can change to any symbol you like!
+    "prefix": "!",
     "token": "YOUR_SUPER_DUPER_SECRET_TOKEN",
     "owners": ["your-id"]
 }
