@@ -1,0 +1,30 @@
+{
+  "name": "elaina",
+  "version": "1.0.0",
+  "description": "Elaina is an open-source, multipurpose Discord Bot that is constantly growing.",
+  "main": "src/index.js",
+  "scripts": {
+    "run": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "thunder"
+  ],
+  "author": "Virak",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "discord.js": "^13.0.0-dev.755c180.1625616230"
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-tesseract": "^0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elaina-js/Elaina.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Elaina-js/Elaina/issues"
+  },
+  "homepage": "https://github.com/Elaina-js/Elaina#readme"
+}
