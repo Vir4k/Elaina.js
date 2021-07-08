@@ -35,8 +35,6 @@ module.exports = class extends Event {
         }
         
         if (!message.content.startsWith(prefix)) return;
-        
-        const prefix = message.content.match(mentionRegexPrefix) ? message.content.match(mentionRegexPrefix)[0] : this.client.prefix;
 
         const [cmd, ...args] = message.content.slice(prefix.length).trim().split(/ +/g);
 
