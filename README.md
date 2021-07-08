@@ -19,7 +19,7 @@ We review all pull requests even if we don't reply to them.
 <i>[Discord.js-Tutorial-Season-2](https://github.com/Blob-Development/bot-tutorial-season-2)</i> by **Blob-Development**.
 
 ## License
-Herrscher is licensed under the GPL 3.0 license. See the file `LICENSE` for more information.
+Elaina is licensed under the GPL 3.0 license. See the file `LICENSE` for more information.
 
 ---
 <i>"Discord", "Discord App", and any associated logos are registered trademarks of Discord, inc.</i>
