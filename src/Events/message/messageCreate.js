@@ -11,7 +11,6 @@ module.exports = class extends Event {
         const mentionRegexPrefix = RegExp(`^<@!?${this.client.user.id}> `);
 
         if (!message.guild || message.author.bot) return;
-        if (!message.content.startsWith(prefix)) return;
         
         const prefix = message.content.match(mentionRegexPrefix) ? message.content.match(mentionRegexPrefix)[0] : this.client.prefix;
         
@@ -28,12 +27,16 @@ module.exports = class extends Event {
 
             return message.reply({
                 content: [
-                    `Hi, my prefix for this guild is \`${prefix}\`.`,
+                    `Hello, my prefix for this guild is \`${prefix}\`.`,
                     `Use \`${prefix}help\` to get a list of commands!`
                 ].join("\n"),
                 components: [row]
             });
         }
+        
+        if (!message.content.startsWith(prefix)) return;
+        
+        const prefix = message.content.match(mentionRegexPrefix) ? message.content.match(mentionRegexPrefix)[0] : this.client.prefix;
 
         const [cmd, ...args] = message.content.slice(prefix.length).trim().split(/ +/g);
 
