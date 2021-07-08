@@ -3,7 +3,7 @@
 # Elaina
 <i>Elaina is an open-source, multipurpose Discord Bot that is constantly growing.</i>
 
-[Herrscher](https://github.com/Elaina-js/Elaina) built with [Node.JS](https://nodejs.org) & [Discord.JS](https://discord.js.org/)
+[Elaina](https://github.com/Elaina-js/Elaina) built with [Node.JS](https://nodejs.org) & [Discord.JS](https://discord.js.org/)
 
 ## Contributing
 Elaina is open-source on our GitHub repository so everyone can contribute to the growth of the bot.
