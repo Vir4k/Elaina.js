@@ -11,6 +11,10 @@ module.exports = class extends Event {
         const mentionRegexPrefix = RegExp(`^<@!?${this.client.user.id}> `);
 
         if (!message.guild || message.author.bot) return;
+        if (!message.content.startsWith(prefix)) return;
+        
+        const prefix = message.content.match(mentionRegexPrefix) ? message.content.match(mentionRegexPrefix)[0] : this.client.prefix;
+        
         if (message.content.match(mentionRegex)) {
             const row = new MessageActionRow()
                 .addComponents(new MessageButton()
@@ -30,10 +34,6 @@ module.exports = class extends Event {
                 components: [row]
             });
         }
-
-        const prefix = message.content.match(mentionRegexPrefix) ? message.content.match(mentionRegexPrefix)[0] : this.client.prefix;
-
-        if (!message.content.startsWith(prefix)) return;
 
         const [cmd, ...args] = message.content.slice(prefix.length).trim().split(/ +/g);
 
