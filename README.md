@@ -14,7 +14,7 @@ We review all pull requests even if we don't reply to them.
 
 ## Credits
 * Made using <i>[Discord.js](https://github.com/discordjs/discord.js)</i>.
-* Herrscher was based on: 
+* Elaina was based on: 
 <i>[Discord.js-v12-Tutorials](https://github.com/MenuDocs/Discord.js-v12-Tutorials)</i> by **MenuDocs**.
 <i>[Discord.js-Tutorial-Season-2](https://github.com/Blob-Development/bot-tutorial-season-2)</i> by **Blob-Development**.
 
