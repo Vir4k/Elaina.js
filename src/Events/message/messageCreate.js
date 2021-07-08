@@ -18,7 +18,7 @@ module.exports = class extends Event {
                     .setLabel("Vote me!")
                     .setURL(`https://top.gg/bot/${this.client.user.id}`))
                 .addComponents(new MessageButton()
-                    .setStyle"LINK")
+                    .setStyle("LINK")
                     .setLabel("Invite me!")
                     .setURL(`https://discord.com/api/oauth2/authorize?client_id=${this.client.user.id}&permissions=2013654135&scope=bot%20applications.commands`));
 
