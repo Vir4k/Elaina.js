@@ -1,28 +1,33 @@
 {
   "name": "elaina",
   "version": "1.0.0",
-  "description": "Elaina is an open-source, multipurpose Discord Bot that is constantly growing.",
+  "description": "Elaina is an open-source, multipurpose Discord Bot that constantly growing.",
   "main": "src/index.js",
-  "scripts": {
-    "run": "node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "thunder"
-  ],
-  "author": "Virak",
-  "license": "GPL-3.0",
   "dependencies": {
-    "discord.js": "^13.0.0-dev.755c180.1625616230"
+    "chalk": "^4.1.1",
+    "discord.js": "^13.0.0-dev.28b5ffb.1625702624",
+    "glob": "^7.1.7",
+    "moment": "^2.29.1",
+    "path": "^0.12.7",
+    "util": "^0.12.4"
   },
   "devDependencies": {
     "eslint": "^7.30.0",
     "eslint-config-tesseract": "^0.3.0"
   },
+  "scripts": {
+    "run": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Elaina-js/Elaina.git"
   },
+  "keywords": [
+    "elaina"
+  ],
+  "author": "Elaina Devs",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/Elaina-js/Elaina/issues"
   },
