@@ -3,7 +3,7 @@
 # Elaina
 <i>Elaina is an open-source, multipurpose Discord Bot that is constantly growing.</i>
 
-[Herrscher](https://github.com/Elaina-js/Elaina) built with [Node.JS](https://nodejs.org) & [Discord.JS](https://discord.js.org/)
+[Elaina](https://github.com/Elaina-js/Elaina) built with [Node.JS](https://nodejs.org) & [Discord.JS](https://discord.js.org/)
 
 ## Contributing
 Elaina is open-source on our GitHub repository so everyone can contribute to the growth of the bot.
@@ -14,12 +14,12 @@ We review all pull requests even if we don't reply to them.
 
 ## Credits
 * Made using <i>[Discord.js](https://github.com/discordjs/discord.js)</i>.
-* Herrscher was based on: 
+* Elaina was based on: 
 <i>[Discord.js-v12-Tutorials](https://github.com/MenuDocs/Discord.js-v12-Tutorials)</i> by **MenuDocs**.
 <i>[Discord.js-Tutorial-Season-2](https://github.com/Blob-Development/bot-tutorial-season-2)</i> by **Blob-Development**.
 
 ## License
-Herrscher is licensed under the GPL 3.0 license. See the file `LICENSE` for more information.
+Elaina is licensed under the GPL 3.0 license. See the file `LICENSE` for more information.
 
 ---
 <i>"Discord", "Discord App", and any associated logos are registered trademarks of Discord, inc.</i>
