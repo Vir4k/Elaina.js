@@ -25,6 +25,23 @@ module.exports = class Util {
         return [...new Set(arr)];
     }
 
+    responseTime(message) {
+        const time = Date.now() - message.createdTimestamp;
+        return `${time.formatNumber() || 0}ms`;
+    }
+
+    categoryCheck(category, message) {
+        category = category.toLowerCase();
+        switch (category) {
+            case 'developer':
+                return this.checkOwner(message.author.id);
+            case 'nsfw':
+                return message.channel.nsfw;
+            default:
+                return true;
+        }
+    }
+
     async loadCommands() {
         return glob(`${this.directory}Commands/**/*.js`).then(commands => {
             for (const commandFile of commands) {
