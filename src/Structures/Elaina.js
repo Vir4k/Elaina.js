@@ -54,7 +54,7 @@ module.exports = class Elaina extends Client {
         this.owners = options.owners;
     }
 
-    async initualize(token = this.token) {
+    async initialize(token = this.token) {
         this.utils.loadCommands();
         this.utils.loadEvents();
         super.login(token);
