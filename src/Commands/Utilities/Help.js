@@ -21,6 +21,7 @@ module.exports = class extends Command {
                 dynamic: true,
                 size: 512
             }))
+            .setTimestamp(new Date())
             .setFooter(`Responded in ${this.client.utils.responseTime(message)}`, message.author.avatarURL({
                 dynamic: true
             }));
@@ -30,9 +31,9 @@ module.exports = class extends Command {
 
             if (!cmd) return message.reply(`Invalid Command named. \`${command}\``);
 
-            embed.setAuthor(`Commands | ${cmd.name.toProperCase()}`, 'https://i.imgur.com/YxoUvH8.png');
+            embed.setAuthor(`Command: ${cmd.name.toProperCase()}`, 'https://i.imgur.com/YxoUvH8.png');
             embed.setDescription([
-                `Command Parameters: \`[]\` is strict & \`()\` is optional\n`,
+                `Command Parameters: \`[]\` is required & \`()\` is optional\n`,
                 `***Aliases:*** ${cmd.aliases.length ? cmd.aliases.map(alias => `\`${alias}\``).join(' ') : 'No aliases.'}`,
                 `***Description:*** ${cmd.description}`,
                 `***Category:*** ${cmd.category}`,
@@ -45,9 +46,10 @@ module.exports = class extends Command {
         } else {
             embed.setDescription([
                 `These are the available commands for ${this.client.user.username}.`,
-                `Need more help? Come join our [guild](https://dsc.gg/elaina)`,
-                `The bot prefix is: \`${prefix}\``
+                `Do you need more help? Come join our [guild](https://dsc.gg/elaina)`,
+                `${this.client.user.username}'s prefix is: \`${prefix}\``
             ].join('\n'));
+            embed.setTimestamp(new Date())
             embed.setFooter(`Responded in ${this.client.utils.responseTime(message)} | ${this.client.commands.size} commands`, message.author.avatarURL({
                 dynamic: true
             }));
@@ -57,7 +59,7 @@ module.exports = class extends Command {
             for (const category of categories) {
                 const dir = this.client.commands.filter(cmd => cmd.category === category);
                 if (this.client.utils.categoryCheck(category, message)) {
-                    embed.addField(`__${category}__ (${dir.size})`, this.client.commands.filter(cmd => cmd.category === category).map(cmd => `\`${cmd.name}\``).join(' '));
+                    embed.addField(`__${category}__ (${dir.size})`, this.client.commands.filter(cmd => cmd.category === category).map(cmd => `\`${cmd.name}\``).join(', '));
                 }
             }
 
