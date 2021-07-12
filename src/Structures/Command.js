@@ -5,7 +5,7 @@ module.exports = class Command {
         this.aliases = options.aliases || [];
         this.description = options.description || "No description provided.";
         this.category = options.category || "Miscellaneous";
-        this.usage = ${this.client.prefix}${this.name} ${options.usage} || "";
+        this.usage = options.usage || "";
     }
 
     async run(message, args) {
