@@ -4,6 +4,7 @@ const {
     Intents
 } = require("discord.js");
 const Util = require("./Util.js");
+const Database = require('./Database.js');
 
 module.exports = class Elaina extends Client {
     constructor(options = {}) {
@@ -25,6 +26,7 @@ module.exports = class Elaina extends Client {
         this.aliases = new Collection();
         this.events = new Collection();
         this.utils = new Util(this);
+        this.database = new Database;
 
         String.prototype.toProperCase = function () {
             return this.replace(/([^\W_]+[^\s-]*) */g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
@@ -50,13 +52,14 @@ module.exports = class Elaina extends Client {
         this.prefix = options.prefix;
 
         if (!options.owners) throw new Error("You must add a list of owners for the client.");
-        if (!Array.isArray(options.owners)) throw new TypeError("Owners should be a type of Array<String>.")
+        if (!Array.isArray(options.owners)) throw new TypeError("Owner should be a type of Array<String>.")
         this.owners = options.owners;
     }
 
-    async initialize(token = this.token) {
+    async connect(token = this.token) {
         this.utils.loadCommands();
         this.utils.loadEvents();
+        this.database.loadDatabase();
         super.login(token);
     }
 };

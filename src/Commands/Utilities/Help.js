@@ -5,7 +5,7 @@ module.exports = class extends Command {
     constructor(...args) {
         super(...args, {
             aliases: ["?"],
-            description: "Display all the commands available for me!",
+            description: "Displays all the commands in the bot",
             category: "Utilities",
             usage: '[command]'
         });
@@ -32,7 +32,7 @@ module.exports = class extends Command {
 
             embed.setAuthor(`Commands | ${cmd.name.toProperCase()}`, 'https://i.imgur.com/YxoUvH8.png');
             embed.setDescription([
-                `Command Parameters: \`[]\` is required, \`()\` is optional\n`,
+                `Command Parameters: \`[]\` is strict & \`()\` is optional\n`,
                 `***Aliases:*** ${cmd.aliases.length ? cmd.aliases.map(alias => `\`${alias}\``).join(' ') : 'No aliases.'}`,
                 `***Description:*** ${cmd.description}`,
                 `***Category:*** ${cmd.category}`,
@@ -45,7 +45,7 @@ module.exports = class extends Command {
         } else {
             embed.setDescription([
                 `These are the available commands for ${this.client.user.username}.`,
-                `Need support? Come visit our [guild](https://dsc.gg/elaina)!`,
+                `Need more help? Come join our [guild](https://dsc.gg/elaina)`,
                 `The bot prefix is: \`${prefix}\``
             ].join('\n'));
             embed.setFooter(`Responded in ${this.client.utils.responseTime(message)} | ${this.client.commands.size} commands`, message.author.avatarURL({
