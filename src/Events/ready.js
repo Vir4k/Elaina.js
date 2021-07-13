@@ -13,6 +13,8 @@ module.exports = class extends Event {
     }
 
     async run() {
+        
+        await this.client.utils.loadInteractions();
 
         let users = this.client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).formatNumber();
         let guilds = this.client.guilds.cache.size.formatNumber();
