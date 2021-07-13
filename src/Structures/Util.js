@@ -5,6 +5,7 @@ const {
 const glob = promisify(require("glob"))
 const Command = require("./Command.js");
 const Event = require("./Event.js");
+const Interaction = require("./Interaction.js");
 
 module.exports = class Util {
     constructor(client) {
@@ -76,6 +77,23 @@ module.exports = class Util {
                 if (!(event instanceof Event)) throw new TypeError(`Event: "${name}" doesn't belong in Events.`);
                 this.client.events.set(event.name, event);
                 event.emitter[event.type](name, (...args) => event.run(...args));
+            }
+        });
+    }
+
+    async loadInteractions() {
+        return glob(`${this.directory}Interactions/**/*.js`).then(interactions => {
+            for (const interactionFile of interactions) {
+                delete require.cache[interactionFile];
+                const {
+                    name
+                } = path.parse(interactionFile);
+                const File = require(interactionFile);
+                if (!this.isClass(File)) throw new TypeError(`Interaction ${name} doesn't export a class.`);
+                const interaction = new File(this.client, name.toLowerCase());
+                if (!(interaction instanceof Interaction)) throw new TypeError(`Interaction ${name} doesn't belong in Interactions directory.`);
+                this.client.interactions.set(interaction.name, interaction);
+                this.client.application?.commands.create(interaction);
             }
         });
     }
