@@ -29,14 +29,14 @@ module.exports = class extends Interaction {
     }
 
     async run(interaction, [query, source = "stable"]) {
-        const header = {
+        const headers = {
             "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.106 Safari/537.36"
         };
 
         const data = await axios.get(
             `https://djsdocs.sorta.moe/v2/embed?src=${source}&q=${encodeURIComponent(query)}`, {
-                headers
-            }).then(res => res.data)
+            headers
+        }).then(res => res.data)
 
         if (!data || data.error) {
             return interaction.reply({
