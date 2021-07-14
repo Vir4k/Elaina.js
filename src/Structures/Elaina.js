@@ -53,7 +53,6 @@ module.exports = class Elaina extends Client {
         this.prefix = options.prefix;
 
         if (!options.owners) throw new Error("You must add a list of owners for the client.");
-        if (!Array.isArray(options.owners)) throw new TypeError("Owner should be a type of Array<String>.")
         this.owners = options.owners;
     }
 
