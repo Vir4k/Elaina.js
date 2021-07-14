@@ -1,9 +1,9 @@
-const Event = require("../../../Structures/Event");
+const Event = require("../../Structures/Event");
 const chalk = require("chalk");
 const moment = require("moment");
 const {
     version
-} = require("../../package.json");
+} = require("../../../package.json");
 
 module.exports = class extends Event {
     constructor(...args) {
