@@ -1,4 +1,4 @@
-const Event = require("../Structures/Event");
+const Event = require("../../../Structures/Event");
 const chalk = require("chalk");
 const moment = require("moment");
 const {
