@@ -3,7 +3,7 @@ const {
     MessageActionRow,
     MessageButton
 } = require('discord.js');
-const Event = require("../../Structures/Event");
+const Event = require("../../../Structures/Event");
 
 module.exports = class extends Event {
     async run(message) {
