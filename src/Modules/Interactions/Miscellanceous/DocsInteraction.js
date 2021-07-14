@@ -1,4 +1,4 @@
-const Interaction = require("../../Structures/Interaction");
+const Interaction = require("../../../Structures/Interaction");
 const Discord = require("discord.js");
 const axios = require("axios");
 
