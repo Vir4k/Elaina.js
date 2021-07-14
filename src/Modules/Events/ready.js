@@ -26,7 +26,7 @@ module.exports = class extends Event {
         console.log([
             `[${chalk.green("INFO")}] Logged in as ${chalk.magentaBright(`${this.client.user.tag}`)} (${chalk.magenta(`${this.client.user.id}`)})`,
             `[${chalk.green("INFO")}] Cached ${users} users, ${guilds} guilds & ${channels} channels`,
-            `[${chalk.green("INFO")}] Loaded ${commands} commands, ${events} events & ${interactions} interactions`
+            `[${chalk.green("STATUS")}] Loaded ${commands} commands, ${events} events & ${interactions} interactions`
         ].join("\n"));
         process.stdout.write(`[${chalk.greenBright("BOOT")}] Sucessfully connected to Discord.\n`);
         process.stdout.write(`[${chalk.greenBright("BOOT")}] Booted up on ${chalk.blueBright(`${moment().format('MMM D, YYYY HH:mm:ss')}.`)}\n`);
