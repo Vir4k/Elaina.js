@@ -1,7 +1,7 @@
 const database = require("mongoose");
 const chalk = require("chalk");
 
-module.exports = class Database {
+module.exports = class ClientDatabase {
     async loadDatabase() {
         database.connect("mongodb+srv://elaina:elaina.db@elaina.hlm6j.mongodb.net/test", {
             useNewUrlParser: true,
@@ -20,5 +20,4 @@ module.exports = class Database {
             process.stdout.write(`[${chalk.yellowBright("WARN")}] MongoDB connection is disconnected\n`);
         });
     }
-
 };

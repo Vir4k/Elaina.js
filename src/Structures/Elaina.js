@@ -4,7 +4,7 @@ const {
     Intents
 } = require("discord.js");
 const Util = require("./Util.js");
-const Database = require('./Database.js');
+const Database = require('./ClientDatabase.js');
 
 module.exports = class Elaina extends Client {
     constructor(options = {}) {
@@ -24,6 +24,7 @@ module.exports = class Elaina extends Client {
         this.validate(options);
         this.commands = new Collection();
         this.aliases = new Collection();
+        this.interactions = new Collection();
         this.events = new Collection();
         this.utils = new Util(this);
         this.database = new Database;

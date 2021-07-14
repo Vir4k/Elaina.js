@@ -4,8 +4,9 @@
   "description": "Elaina is an open-source, multipurpose Discord Bot that constantly growing.",
   "main": "src/index.js",
   "dependencies": {
+    "axios": "^0.21.1",
     "chalk": "^4.1.1",
-    "discord.js": "^13.0.0-dev.28b5ffb.1625702624",
+    "discord.js": "^13.0.0-dev.1dcad05.1626178061",
     "dotenv": "^10.0.0",
     "glob": "^7.1.7",
     "moment": "^2.29.1",
